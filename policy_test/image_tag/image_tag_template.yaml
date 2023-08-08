@@ -15,11 +15,13 @@ spec:
         violation[{"msg": msg, "details":{}}] {
           image := input.review.object.spec.template.spec.containers[_].image
           not count(split(image, ":")) == 2
-          msg := sprintf("immagine '%v' utilizza un tag non valido", [image])
-        }
+          msg := sprintf("immagine non utilizza un tag", [image]) }
+                                                                      
+       
 
         violation[{"msg": msg, "details":{}}] {
           image := input.review.object.spec.template.spec.containers[_].image
-          endswith(image, "latest")
-          msg := sprintf("image '%v' usa il tag : 'latest' ", [image])
+          tag := split(image, ":")[1]
+          contains(tag, "latest")
+          msg := sprintf("l'immagine utilizza un tag che contiene 'latest'", [image])
         }
