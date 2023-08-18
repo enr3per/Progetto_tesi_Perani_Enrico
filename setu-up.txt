@@ -25,7 +25,7 @@ kubectl apply -f disallowed-memory.yaml
 
 kubectl apply -f is-allowed.yaml
 
-kubectl get pods
+kubectl get all
 
 kubectl delete -f limited_container_template.yaml
 kubectl delete -f constraint.yaml
@@ -43,7 +43,9 @@ kubectl apply -f image_tag_constraint.yaml
 
 kubectl apply -f not-allawod-tag-leatest.yaml
 
-kubectl apply -f is-allowed.yaml
+kubectl apply -f is-allowed.yaml	
+
+kubectl apply -f not-alloved-tag-2.yaml
 
 
 
@@ -52,8 +54,8 @@ kubectl get deployments
 kubectl delete -f image_tag_template.yaml
 kubectl delete image_tag_constraint.yaml
 kubectl delete -f is-allowed.yaml
-
-
+kubectl delete -f not-allawod-tag-leatest.yaml
+kubectl delete -f not-alloved-tag-2.yaml
 
 									privileges_deprecated:
 
@@ -68,6 +70,7 @@ kubectl apply -f not-allowed-1.yaml
 
 kubectl apply -f is-allowed.yaml
 
+kubectl get all
 
 kubectl delete -f privilege_deprecated_template.yaml
 kubectl delete privilege_flag_constraint.yaml

@@ -5,4 +5,4 @@ metadata:
 spec:
   containers:
     - name: mongo
-      image: vineguard/mongo:5.0
+      image: personal/mongo:5.0
