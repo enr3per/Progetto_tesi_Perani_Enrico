@@ -3,4 +3,4 @@ kind: Namespace
 metadata:
   name: my-namespace
   labels:
-    owner: bosurgi.test
+    owner: rossi.test
